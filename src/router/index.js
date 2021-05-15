@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// Главная страница
 import MainWrapper from '../views/MainWrapper.vue'
 
 Vue.use(VueRouter)
@@ -13,11 +14,15 @@ const routes = [
   {
     path: '/page-translate-word',
     name: 'pageTranslateWord',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/pages/pageTranslateWord.vue')
+  },
+
+ 
+  { path: '*', 
+    name: 'NotFoundPage',
+    component: () => import(/* webpackChunkName: "about" */ '../views/pages/NotFoundPage.vue')
   }
+  
 ]
 
 const router = new VueRouter({

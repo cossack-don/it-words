@@ -1,31 +1,10 @@
 <template>
   <div id="app">
+    <!-- Разобраться в папке store и разделить на модули state.muttation ect... -->
     <router-view></router-view>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  border: solid red 1px;
-  max-width: 900px;
-  margin: 0 auto;
-}
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

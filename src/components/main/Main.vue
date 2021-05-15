@@ -1,7 +1,7 @@
 <template>
   <main class="main">
-    <button @click="onClickRandomWords">Случайный порядок слов</button>
-    <Search class="main_search" />
+    
+    <Search />
     <ItemWord
       class="main_item"
       :arrayWords="GETTERS_GET_ARRAY_WORDS"
@@ -31,20 +31,10 @@ export default {
   computed: {
     ...mapGetters(["GETTERS_GET_ARRAY_WORDS"]),
   },
-  methods: {
-    ...mapActions(["ACTION_RANDOM_WORDS"]),
-    onClickRandomWords() {
-      this.ACTION_RANDOM_WORDS();
-    },
-  },
+
 };
 </script>
 
 <style>
-.main_search {
-  background: red;
-}
-.main_item {
-  /* background: yellow; */
-}
+
 </style>

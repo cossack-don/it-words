@@ -1,5 +1,5 @@
 <template>
-  <div><input type="text" v-model="search" /></div>
+  <input class="main-search-input" type="text" v-model.trim="search" placeholder="Автопоиск по слову" />
 </template>
 
 <script>

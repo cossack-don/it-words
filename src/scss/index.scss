@@ -1,0 +1,20 @@
+// app.vue
+@import "@/APP.scss";
+
+
+
+// header
+@import "@/components/header/header.scss";
+
+// main
+@import "@/components/main/main.scss";
+
+// component search
+@import "@/components/main/components/search/search.scss";
+// mini-component- input-search
+@import "@/components/main/components/search/components/main-search-words.scss";
+
+
+
+// footer
+@import "@/components/footer/footer.scss";

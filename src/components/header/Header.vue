@@ -1,16 +1,28 @@
 <template>
-  <header>
+  <header class="header">
+    <div class="header__wrapper">
+<div class="header__btns">
+      <button @click="onClickRandomWords" class="header__btn-randow-word">Случайный порядок слов</button>
+      <router-link to="/page-translate-word" class="header__link">Page 2</router-link>
+</div>
     <h1>
       Словарь английских-технических слов. <br />
       Учи английский сам.
     </h1>
-    <router-link to="/page-translate-word">page 2</router-link>
+    </div>
+
+    
   </header>
 </template>
 
 <script>
-export default {};
+import { mapGetters, mapActions } from "vuex";
+
+export default {  methods: {
+    ...mapActions(["ACTION_RANDOM_WORDS"]),
+    onClickRandomWords() {
+      this.ACTION_RANDOM_WORDS();
+    },
+  },};
 </script>
 
-<style>
-</style>

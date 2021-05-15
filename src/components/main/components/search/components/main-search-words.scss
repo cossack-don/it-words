@@ -1,0 +1,18 @@
+
+.main-search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: solid #ff7171 3px;
+    transition: 0.3s;
+    
+    &::placeholder {
+        text-align: center;
+    }
+
+    &:focus {
+        transition: 0.3s;
+        border: solid #46bd87 3px;
+    }
+}
