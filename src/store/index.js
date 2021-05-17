@@ -12,13 +12,13 @@ import arrayItemsWords from '@/store/arrayEnglishWords/wordsArray.js'
 export default new Vuex.Store({
   modules: {
 
-    
 
-},
+
+  },
   state: {
     arrayItemsWords,
     searchString: '',
-    
+
   },
 
   // 
@@ -31,9 +31,9 @@ export default new Vuex.Store({
     },
   },
 
-// 
-// 
-// 
+  // 
+  // 
+  // 
   mutations: {
 
     MUTATUINS_RANDOM_WORDS(state) {
@@ -45,18 +45,21 @@ export default new Vuex.Store({
     MUTATUINS_SEARCH_INPUT(state, value) {
       // value получаем из компонента main search words значение инпута через v-modal
       state.searchString = value.toLowerCase()
-
       if (state.searchString) {
         state.arrayItemsWords.forEach(item => {
-            item.show = item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase());
-           
+          item.show = item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase());
+
         })
       } else {
-        console.log(3)
         state.arrayItemsWords.forEach(i => i.show = true);
       }
 
     },
+
+    // MUTATUINS_CLEAN_VALUE_SEARCH(state) {
+
+    //   state.searchString
+    // },
   },
 
   // MUTATUINS_ON_CLICK_BTN_DELETE_ITEM(state,indexItemaCard) {
@@ -72,10 +75,13 @@ export default new Vuex.Store({
       console.log(`index - №${indexItemaCard}`, "индекс шаблона-карточки для слова массив - arrayItems от него индекс");
       state.arrayItemsWords.splice(indexItemaCard, 1);
     },
-    ACTION_SEARCH_INPUT({ commit}) {
+    ACTION_SEARCH_INPUT({ commit }) {
       commit('MUTATUINS_SEARCH_INPUT')
     },
 
+    // ACTION_CLEAN_VALUE_SEARCH({ commit }) {
+    //   commit('MUTATUINS_CLEAN_VALUE_SEARCH')
+    // },
   },
 
 })

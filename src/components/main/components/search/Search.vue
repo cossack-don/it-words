@@ -9,6 +9,7 @@
 // Search
 import MainSearchWords from "@/components/main/components/search/components/MainSearchWords.vue";
 // import BtnSearch from "@/components/main/components/search/components/BtnSearch.vue";
+
 export default {
   components: {
     MainSearchWords,
