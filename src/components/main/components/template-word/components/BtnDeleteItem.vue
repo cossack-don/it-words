@@ -1,9 +1,10 @@
 <template>
   <button
+    class="btn-delete-item"
     :idObjectWords="idObjectWords"
     @click="onClickDeleteItem(idObjectWords)"
   >
-    BtnDeleteItem
+    Удалить слово
   </button>
 </template>
 

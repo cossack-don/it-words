@@ -9,6 +9,11 @@
 // main
 @import "@/components/main/main.scss";
 
+// template item-word
+@import "@/components/main/components/template-word/item-word.scss";
+// mini-component btn-delet-item
+@import "@/components/main/components/template-word/components/btn-delete-item.scss";
+
 // component search
 @import "@/components/main/components/search/search.scss";
 // mini-component- input-search
@@ -18,3 +23,7 @@
 
 // footer
 @import "@/components/footer/footer.scss";
+
+
+// media adaptive
+@import "@/scss/media.scss";

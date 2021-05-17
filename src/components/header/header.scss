@@ -1,5 +1,7 @@
 .header {
-
+&__title {
+    font-size: 25px;
+}
     &__btns {
         display: flex;
     }
