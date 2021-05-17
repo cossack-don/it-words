@@ -4,7 +4,22 @@
         justify-content: center;
         width: 100%;
     }
+    
     .discription-item__line {
         display: none;
+    }
+
+    .btn-delete-item:hover {
+        transition: 0.5s;
+        background: #2c3e50;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+    }
+    .btn-delete-item-desktop{
+        display: none;
+    }
+    .btn-delete-item-mobile {
+        display: block;
     }
   }

@@ -7,11 +7,25 @@
     color: #ffffff;
     transition: 0.5s;
 
-    &:hover {
+    &:hover, &:active {
         transition: 0.5s;
         background: #cb2027;
         box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
         -webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
     }
+}
+
+.btn-delete-item-mobile {
+    display: none;
+    padding: 5px;
+
+    &__icon-close {
+        width: 25px;
+        height: 25px;
+    }
+
+svg{
+    fill: #ffffff;
+}
 }

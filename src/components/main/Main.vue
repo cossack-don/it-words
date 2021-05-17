@@ -1,6 +1,5 @@
 <template>
   <main class="main">
-    
     <Search />
     <ItemWord
       class="main_item"
@@ -31,10 +30,8 @@ export default {
   computed: {
     ...mapGetters(["GETTERS_GET_ARRAY_WORDS"]),
   },
-
 };
 </script>
 
 <style>
-
 </style>
