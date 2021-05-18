@@ -82,5 +82,135 @@ export default
             done: false,
             show: true
         },
+        {
+            id: 11,
+            word: 'to back up (backup)',
+            translate: 'выполнять резервное копирование',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 12,
+            word: 'to boot',
+            translate: 'загружать, загружаться (например, об устройстве или операционной системе)',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 13,
+            word: 'to burn',
+            translate: 'записывать на оптический диск',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 14,
+            word: 'to create',
+            translate: 'создавать',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 15,
+            word: 'to compile',
+            translate: 'компилировать',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 16,
+            word: 'to compress',
+            translate: 'сжимать (например, архиватором)',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 17,
+            word: 'to connect',
+            translate: 'соединять, подключаться',
+            discription: '',
+            done: false,
+            show: true
+        },
+
+        {
+            id: 18,
+            word: 'to copy',
+            translate: 'скопировать',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 19,
+            word: 'to cut',
+            translate: 'вырезать в буфер обмена',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 20,
+            word: 'to debug',
+            translate: 'отлаживать',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 21,
+            word: 'to decrypt',
+            translate: 'расшифровывать',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 22,
+            word: 'to deploy',
+            translate: 'развертывать (например, приложение на сервере)',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 23,
+            word: 'to develop',
+            translate: ' разрабатывать',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 24,
+            word: 'to disable',
+            translate: 'отключать, деактивировать',
+            discription: '',
+            done: false,
+            show: true
+        },
+        {
+            id: 25,
+            word: 'callback',
+            translate: 'функция, которая передается в качестве аргумента в другую функцию и вызывается асинхронно.',
+            discription: '',
+            done: false,
+            show: true
+        },
+
+        {
+            id: 26,
+            word: 'Closure',
+            translate: 'замыкание',
+            discription: '',
+            done: false,
+            show: true
+        },
 
     ]

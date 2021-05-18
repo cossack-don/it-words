@@ -1,7 +1,7 @@
 <template>
   <div class="discription-item" :item="item">
     <div class="discription-item__en-word">{{ item.word }}</div>
-    <div class="discription-item__line">-</div>
+    <div class="discription-item__line">—</div>
     <div class="discription-item__ru-word">{{ item.translate }}</div>
     <!-- <p class="s">
       <span class="discription-item__en-word"></span>
@@ -20,10 +20,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .discription-item {
   display: flex;
   align-items: center;
+
+  &__line {
+    margin: 0 10px;
+  }
 }
 
 .discription-item__en-word {

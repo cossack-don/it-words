@@ -5,10 +5,18 @@
       :key="item.id"
       class="items-word-wrapper__item-wrapper"
     >
-      <div v-if="item.show" class="items-word-wrapper__item">
+      <div
+        v-if="item.show"
+        class="items-word-wrapper__item"
+        :class="{ checkedWordBgJs: item.done }"
+      >
         <DiscriptionItem :item="item" />
         <div class="item-word__btns">
-          <!-- <BtnCheckboxHideItem :idObjectWords="item.id" /> -->
+          <!-- {{ item.done }} -->
+          <BtnCheckboxHideItem
+            :idObjectWords="item.id"
+            :doneObjectWords="item.done"
+          />
           <BtnDeleteItem :idObjectWords="item.id" />
         </div>
       </div>
@@ -18,7 +26,7 @@
 
 <script>
 import BtnDeleteItem from "@/components/main/components/template-word/components/BtnDeleteItem.vue";
-// import BtnCheckboxHideItem from "@/components/main/components/template-word/components/BtnCheckboxHideItem.vue";
+import BtnCheckboxHideItem from "@/components/main/components/template-word/components/BtnCheckboxHideItem.vue";
 import DiscriptionItem from "@/components/main/components/template-word/components/DiscriptionItem.vue";
 export default {
   props: {
@@ -31,13 +39,11 @@ export default {
   },
 
   // BtnCheckboxHideItem
-  components: { BtnDeleteItem, DiscriptionItem },
+  components: { BtnDeleteItem, DiscriptionItem, BtnCheckboxHideItem },
 };
 </script>
 
 <style>
-.wp {
-}
 .item-word {
   display: flex;
   /* justify-content: space-between; */
@@ -49,5 +55,6 @@ export default {
 }
 .item-word__btns {
   display: flex;
+  align-items: center;
 }
 </style>

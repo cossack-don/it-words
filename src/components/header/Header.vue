@@ -3,7 +3,8 @@
     <div class="header__wrapper">
       <div class="header__btns">
         <button @click="onClickRandomWords" class="header__btn-randow-word">
-          Случайный порядок слов
+          Случайный <br />
+          порядок слов
         </button>
         <router-link to="/page-translate-word" class="header__link"
           >Page 2</router-link

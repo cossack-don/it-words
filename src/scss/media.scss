@@ -1,3 +1,14 @@
+@media (max-width: 1050px) {
+    #app {
+    border:none;
+    border-radius: 0;
+    padding: 15px;
+    max-width: none;
+    margin: 0 auto;
+    background: aliceblue;
+    }
+}
+
 @media (max-width: 600px) {
     .discription-item {
         flex-direction: column;
@@ -29,5 +40,10 @@
     .items-word-wrapper__item:hover {
         background: #09cd74;
         transition: 0s;
+    }
+
+    .input-checkbox-hide-item {
+        width: 57px;
+        height: 57px;
     }
   }

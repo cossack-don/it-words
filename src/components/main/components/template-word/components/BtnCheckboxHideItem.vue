@@ -1,10 +1,13 @@
 <template>
   <input
+    v-model="returnArrayFlags"
     :idObjectWords="idObjectWords"
-    @click="onClickCheckBox(idObjectWords)"
+    :doneObjectWords="doneObjectWords"
+    @change="onClickCheckBox(idObjectWords, doneObjectWords)"
     type="checkbox"
     class="input-checkbox-hide-item"
   />
+  <!-- checked="checked" -->
 </template>
 
 <script>
@@ -15,20 +18,30 @@ export default {
       type: Number,
       required: true,
     },
+
+    doneObjectWords: {
+      type: Boolean,
+      required: true,
+    },
   },
-  // computed: { ...mapState(["arrayItems"]) },
+  computed: {
+    ...mapGetters(["GETTERS_FLAG_CHECKBOX"]),
+
+    returnArrayFlags: {
+      get() {
+        this.GETTERS_FLAG_CHECKBOX;
+      },
+      set() {
+        this.ACTION_FLAG_CHECKBOX();
+      },
+    },
+  },
+
   methods: {
-    // ...mapActions(["ACTION_CHANGE_DONE_ITEM"]),
-    onClickCheckBox(objectID) {
-      console.log(objectID);
-      // принимает id из объекта, сравниваем с id в массиве arrayItemsWords
-      // this.arrayItemsWords.forEach((item, index) => {
-      //   if (item.id === objectID) {
-      //     console.log(item);
-      //     this.ACTION_CHANGE_DONE_ITEM();
-      //     // this.ACTION_ON_CLICK_BTN_DELETE_ITEM(index);
-      //   }
-      // });
+    ...mapActions(["ACTION_FLAG_CHECKBOX"]),
+    // checked
+    onClickCheckBox(idObjectWords, statusFlag) {
+      this.ACTION_FLAG_CHECKBOX(idObjectWords);
     },
   },
 };
@@ -36,6 +49,9 @@ export default {
 
 <style>
 .input-checkbox-hide-item {
-  margin-bottom: 15px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  margin-right: 15px;
 }
 </style>
