@@ -15,6 +15,7 @@ export default {
     MainSearchWords,
     // BtnSearch,
   },
+  computed: {},
 };
 </script>
 

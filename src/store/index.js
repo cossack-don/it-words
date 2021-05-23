@@ -80,7 +80,7 @@ export default new Vuex.Store({
       state.searchString = auto_layout_keyboard(valueSearchInput.toLowerCase())
 
       if (state.searchString) {
-        console.log(state.searchString)
+        // console.log(state.searchString, 'ww')
         state.arrayItemsWords.forEach(item => {
           item.show = item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase());
         })
@@ -105,8 +105,8 @@ export default new Vuex.Store({
 
     // MUTATUINS_ON_CLICK_BTN_CLEAN_VALUE_SEARCH(state, val) {
 
-    //   state.searchString = val = ''
-    //   console.log(state.searchString, 'mut')
+    //   state.searchString = ''
+    //   console.log(state.searchString, 'mut', val, 8888)
     // },
   },
 
@@ -127,9 +127,9 @@ export default new Vuex.Store({
       commit('MUTATUINS_SEARCH_INPUT', valueSearchInput)
     },
 
-    // ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH({ commit }, val) {
-    //   console.log(val, 'act')
-    //   commit('MUTATUINS_ON_CLICK_BTN_CLEAN_VALUE_SEARCH', val)
+    // ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH({ commit }, value) {
+    //   // console.log('act', value, 333)
+    //   commit('MUTATUINS_ON_CLICK_BTN_CLEAN_VALUE_SEARCH', value)
     // },
 
     ACTION_FLAG_CHECKBOX({ commit }, id) {

@@ -6,7 +6,9 @@
       v-model="search"
       placeholder="Автопоиск по слову"
     />
-    <!-- <button>сделать кнопку, очистить инпут</button> -->
+    <button @click="cleanValueSearch(GETTERS_SEARCH_INPUT)">
+      сделать кнопку, очистить инпут
+    </button>
 
     <!-- проблема с отисткой инпута -->
   </div>
@@ -30,13 +32,18 @@ export default {
         this.ACTION_SEARCH_INPUT(value);
         // this.$store.dispatch("ACTION_SEARCH_INPUT", value);
       },
+      // set(value) {
+      //   this.ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH(value);
+      // },
     },
   },
 
   methods: {
     ...mapActions(["ACTION_SEARCH_INPUT"]),
 
-    cleanValueSearch() {
+    cleanValueSearch(val) {
+      // this.ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH();
+      console.log(val);
       // this.GETTERS_ON_CLICK_BTN_CLEAN_VALUE_SEARCH;
     },
   },

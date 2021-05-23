@@ -16,6 +16,7 @@
           <BtnCheckboxHideItem
             :idObjectWords="item.id"
             :doneObjectWords="item.done"
+            :checked="item.done"
           />
           <BtnDeleteItem :idObjectWords="item.id" />
         </div>

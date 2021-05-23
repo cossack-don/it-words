@@ -7,7 +7,7 @@
     type="checkbox"
     class="input-checkbox-hide-item"
   />
-  <!-- checked="checked" -->
+  <!-- checked="checked" :checked="doneObjectWords"-->
 </template>
 
 <script>
