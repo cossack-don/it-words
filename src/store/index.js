@@ -13,12 +13,15 @@ export default new Vuex.Store({
   modules: {
 
 
-
+    // 
+    // Доработка по функционалу.
+    // Проверить все геттеры,мутации , нужны ли все , лишние очистить
   },
   state: {
     arrayItemsWords,
     searchString: '',
-
+    testString: ''
+    // РАЗОБРАТЬСЯ С ЧЕКБОКСОМ СЕТТЕРАМИ ГЕТТЕРАМИ И УДАЛИТЬ ЧТО ЛИШНЕЕ
   },
 
   // 
@@ -30,11 +33,12 @@ export default new Vuex.Store({
       return state.arrayItemsWords
     },
 
-    GETTERS_SEARCH_INPUT(state) {
-      console.log(state.searchArray, 'этой переменной нету в сторе')
-      // если возвращаю arrayItemsWords - ломается поиск
-      return true;
-    },
+    // GETTERS_SEARCH_INPUT(state) {
+    //   console.log(state.searchArray, 'этой переменной нету в сторе')
+    //   // если возвращаю arrayItemsWords - ломается поиск
+    //   console.log(state.s)
+    //   return state.s = ''
+    // },
 
     GETTERS_FLAG_CHECKBOX(state) {
       // return state.arrayItemsWords;
@@ -51,6 +55,17 @@ export default new Vuex.Store({
   // 
   // 
   mutations: {
+    cleanMessage(state, message) {
+      state.testString = message
+      state.testString = ''
+      if (state.testString === '') {
+        state.arrayItemsWords.forEach(i => {
+          i.show = true
+        });
+
+      }
+      // console.log(state.testString)
+    },
 
     MUTATUINS_RANDOM_WORDS(state) {
       // меняем порядок индексов в массиве 
@@ -58,8 +73,9 @@ export default new Vuex.Store({
     },
 
     // поиск по словам
-    MUTATUINS_SEARCH_INPUT(state, valueSearchInput) {
-
+    MUTATUINS_SEARCH_INPUT(state, message) {
+      state.testString = message
+      // valueSearchInput = valueSearchInput = ''
       // ищет по анг буквам переводя в русские ghbdtn = привет
       function auto_layout_keyboard(str) {
         const replacer = {
@@ -77,11 +93,19 @@ export default new Vuex.Store({
 
       // console.log(valueSearchInput);
       // value получаем из компонента main search words значение инпута через v-modal
-      state.searchString = auto_layout_keyboard(valueSearchInput.toLowerCase())
+      state.searchString = auto_layout_keyboard(state.testString.toLowerCase())
+      console.log(state.searchString, 'ww')
 
+      // if (state.searchString.length >= 1) {
+      //   console.log(333)
+      // }
       if (state.searchString) {
-        // console.log(state.searchString, 'ww')
+
         state.arrayItemsWords.forEach(item => {
+          // if (item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase())) {
+          //   // если фолс, выводим сообщение что ничего не найдено
+          // }
+          // console.log(item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase()))
           item.show = item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase());
         })
 
@@ -103,10 +127,11 @@ export default new Vuex.Store({
       })
     },
 
-    // MUTATUINS_ON_CLICK_BTN_CLEAN_VALUE_SEARCH(state, val) {
+    // MUTATUINS_ON_CLICK_BTN_CLEAN_VALUE_SEARCH(state, value) {
+    //   state.s = value
 
-    //   state.searchString = ''
-    //   console.log(state.searchString, 'mut', val, 8888)
+    //   // value = value = ''
+    //   console.log(value, 'mut', 8888)
     // },
   },
 
@@ -116,6 +141,9 @@ export default new Vuex.Store({
   // }
 
   actions: {
+    TEST({ commit }) {
+      commit('cleanMessage')
+    },
     ACTION_RANDOM_WORDS({ commit }) {
       commit('MUTATUINS_RANDOM_WORDS')
     },
@@ -128,7 +156,7 @@ export default new Vuex.Store({
     },
 
     // ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH({ commit }, value) {
-    //   // console.log('act', value, 333)
+    //   // console.log(value, 31)
     //   commit('MUTATUINS_ON_CLICK_BTN_CLEAN_VALUE_SEARCH', value)
     // },
 
