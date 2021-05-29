@@ -3,8 +3,9 @@
     <input
       class="main-search-input"
       type="text"
-      :value="message"
-      @input="updateMessage"
+      :value="words"
+      @input="updateWords"
+      @keyup.esc="cleanKeyUpEsc"
       placeholder="Автопоиск по слову"
     />
     <button class="main-search-button-delete" @click="cleanValueSearch">
@@ -30,60 +31,40 @@
         </svg>
       </div>
     </button>
-
-    <!-- проблема с отисткой инпута -->
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from "vuex";
+import { mapActions, mapState, mapMutations } from "vuex";
 export default {
-  data() {
-    return {
-      tes: false,
-    };
-  },
   computed: {
     ...mapState({
-      message: (state) => state.testString,
+      words: (state) => state.stateComponent.searchString,
     }),
-    // ...mapGetters(["GETTERS_SEARCH_INPUT"]),
-    // search: {
-    //   get() {
-    //     // console.log(this.GETTERS_SEARCH_INPUT, 89);
-    //     // this.GETTERS_SEARCH_INPUT;
-    //     // console.log(this.GETTERS_SEARCH_INPUT, 321);
-    //   },
-    //   set(value) {
-    //     this.ACTION_SEARCH_INPUT(value);
-    //     // this.ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH(value);
-    //     // this.$store.dispatch("ACTION_SEARCH_INPUT", value);
-    //   },
-
-    // set(value) {
-    //   this.ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH(value);
-    // },
-    // },
   },
 
   methods: {
-    ...mapActions(["ACTION_SEARCH_INPUT", "TEST"]),
+    ...mapMutations(["MUTATUINS_SEARCH_INPUT"]),
 
-    updateMessage(e) {
-      this.$store.commit("MUTATUINS_SEARCH_INPUT", e.target.value);
-    },
-    cleanValueSearch(e) {
-      this.TEST();
+    ...mapActions([
+      "ACTION_SEARCH_INPUT",
+      "ACTION_CLEAN_ON_CLICL_BTN_VALUE_INPUT",
+    ]),
+
+    updateWords(e) {
+      this.ACTION_SEARCH_INPUT(e.target.value);
+
+      // старый вариант
+      // this.MUTATUINS_SEARCH_INPUT(e.target.value);
+      // this.$store.commit("MUTATUINS_SEARCH_INPUT", e.target.value);
     },
 
-    // cleanValueSearch() {
-    // /ПРОБОВАТЬ ПЕРВЫЙ ВАРИАНТ С ВЕЛЬЮ
-    // https://vuex.vuejs.org/ru/guide/forms.html#%D0%B4%D0%B2%D1%83%D0%BD%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5-%D1%81%D0%B2%D0%BE%D0%B8%D1%81%D1%82%D0%B2%D0%B0
-    // this.ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH();
-    // this.ACTION_ON_CLICK_BTN_CLEAN_VALUE_SEARCH();
-    // console.log(this.ACTION_SEARCH_INPUT(value));
-    // this.GETTERS_ON_CLICK_BTN_CLEAN_VALUE_SEARCH;
-    // },
+    cleanValueSearch() {
+      this.ACTION_CLEAN_ON_CLICL_BTN_VALUE_INPUT();
+    },
+    cleanKeyUpEsc() {
+      this.ACTION_CLEAN_ON_CLICL_BTN_VALUE_INPUT();
+    },
   },
 };
 </script>

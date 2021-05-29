@@ -1,13 +1,10 @@
 <template>
   <input
-    v-model="returnArrayFlags"
     :idObjectWords="idObjectWords"
-    :doneObjectWords="doneObjectWords"
-    @change="onClickCheckBox(idObjectWords, doneObjectWords)"
+    @click="onClickCheckBox(idObjectWords)"
     type="checkbox"
     class="input-checkbox-hide-item"
   />
-  <!-- checked="checked" :checked="doneObjectWords"-->
 </template>
 
 <script>
@@ -18,29 +15,13 @@ export default {
       type: Number,
       required: true,
     },
-
-    doneObjectWords: {
-      type: Boolean,
-      required: true,
-    },
   },
-  computed: {
-    ...mapGetters(["GETTERS_FLAG_CHECKBOX"]),
-
-    returnArrayFlags: {
-      get() {
-        this.GETTERS_FLAG_CHECKBOX;
-      },
-      set() {
-        this.ACTION_FLAG_CHECKBOX();
-      },
-    },
-  },
+  computed: {},
 
   methods: {
     ...mapActions(["ACTION_FLAG_CHECKBOX"]),
-    // checked
-    onClickCheckBox(idObjectWords, statusFlag) {
+
+    onClickCheckBox(idObjectWords) {
       this.ACTION_FLAG_CHECKBOX(idObjectWords);
     },
   },

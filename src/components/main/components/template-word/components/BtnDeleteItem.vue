@@ -43,13 +43,13 @@ export default {
       required: true,
     },
   },
-  computed: { ...mapState(["arrayItemsWords"]) },
+  // computed: { ...mapState(["arrayItemsWords"]) },
   methods: {
     ...mapActions(["ACTION_ON_CLICK_BTN_DELETE_ITEM"]),
 
     onClickDeleteItem(idObjectItem) {
       // принимает id из объекта, сравниваем с id в массиве arrayItemsWords
-      this.arrayItemsWords.find((item, index) => {
+      this.$store.state.stateComponent.arrayItemsWords.find((item, index) => {
         if (item.id === idObjectItem) {
           this.ACTION_ON_CLICK_BTN_DELETE_ITEM(index);
           return true;
