@@ -6,14 +6,14 @@ const mutations = {
     MUTATUINS_CLEAN_WORDS(state, valueSearch) {
 
         // кладем значение из компонента в стор переменную
-        state.stateComponent.searchString = valueSearch
+        state.searchString = valueSearch
 
         // очищаем поле инпута
-        state.stateComponent.searchString = ''
+        state.searchString = ''
 
         // если поле пустое, возвращаем массив значений слов
-        if (state.stateComponent.searchString === '') {
-            state.stateComponent.arrayItemsWords.forEach(i => {
+        if (state.searchString === '') {
+            state.arrayItemsWords.forEach(i => {
                 i.show = true
             });
         }
@@ -22,7 +22,7 @@ const mutations = {
     // _____________________________________________________________________++++++
     MUTATUINS_RANDOM_WORDS(state) {
         // меняем порядок индексов в массиве 
-        state.stateComponent.arrayItemsWords.sort(() => Math.random() - 0.5);
+        state.arrayItemsWords.sort(() => Math.random() - 0.5);
     },
 
     // _____________________________________________________________________++++
@@ -47,19 +47,19 @@ const mutations = {
 
         // value получаем из компонента main search words значение инпута через v-modal
         // получаем данные из компонента и кладем в переменную стора серч стринг
-        state.stateComponent.searchString = autoLayoutKeybord(valueSearch.toLowerCase())
+        state.searchString = autoLayoutKeybord(valueSearch.toLowerCase())
 
 
-        if (state.stateComponent.searchString) {
+        if (state.searchString) {
             // если не удаляли слова из списка, показываем
-            state.stateComponent.arrayItemsWords.forEach(item => {
+            state.arrayItemsWords.forEach(item => {
                 // ТУТ ГДЕ-ТО СДЕЛАТЬ ПРОВЕРКУ НА ТО ЧТО ЕСЛИ СЛОВО НЕ НАШЛОСЬ, ВЫВОДИТЬ ОПОВЕЩЕНИЕ ТАКОГО СЛОВА НЕТУ, ДОРАБОТАТЬ!
-                item.show = item.translate.toLowerCase().includes(state.stateComponent.searchString.trim().toLowerCase());
+                item.show = item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase());
             })
 
         } else {
             // Скрываем слово которое удаляли (флаг)
-            state.stateComponent.arrayItemsWords.forEach(i => {
+            state.arrayItemsWords.forEach(i => {
                 i.show = true
             });
         }
@@ -68,7 +68,7 @@ const mutations = {
     // _____________________________________________________________________+++
     MUTATUINS_FLAG_CHECKBOX(state, id) {
         // проходимся циклом до первого нужного индекса и ставим тру/фолс
-        state.stateComponent.arrayItemsWords.find(item => {
+        state.arrayItemsWords.find(item => {
 
             if (item.id === id) {
                 item.done = !item.done
@@ -78,12 +78,12 @@ const mutations = {
 
     // _____________________________________________________________________++++++
     MUTATUINS_ARRAY_WORDS(state) {
-        state.stateComponent.arrayItemsWords = state.stateComponent.arrayItemsWords
+        state.arrayItemsWords = state.arrayItemsWords
     },
 
     // _____________________________________________________________________++++
     MUTATUINS_ON_CLICK_BTN_DELETE_ITEM(state, indexItemCard) {
-        state.stateComponent.arrayItemsWords.splice(indexItemCard, 1);
+        state.arrayItemsWords.splice(indexItemCard, 1);
     }
 
 

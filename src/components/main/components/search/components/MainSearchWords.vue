@@ -39,7 +39,7 @@ import { mapActions, mapState, mapMutations } from "vuex";
 export default {
   computed: {
     ...mapState({
-      words: (state) => state.stateComponent.searchString,
+      words: (state) => state.searchString,
     }),
   },
 

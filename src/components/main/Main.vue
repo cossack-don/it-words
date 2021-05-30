@@ -4,7 +4,7 @@
     <ItemWord
       class="main_item"
       :arrayWords="GETTERS_GET_ARRAY_WORDS"
-      v-if="$store.state.stateComponent.arrayItemsWords.length > 0"
+      v-if="$store.state.arrayItemsWords.length > 0"
     />
     <div v-else>Слова закончились</div>
   </main>

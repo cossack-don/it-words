@@ -49,7 +49,7 @@ export default {
 
     onClickDeleteItem(idObjectItem) {
       // принимает id из объекта, сравниваем с id в массиве arrayItemsWords
-      this.$store.state.stateComponent.arrayItemsWords.find((item, index) => {
+      this.$store.state.arrayItemsWords.find((item, index) => {
         if (item.id === idObjectItem) {
           this.ACTION_ON_CLICK_BTN_DELETE_ITEM(index);
           return true;
