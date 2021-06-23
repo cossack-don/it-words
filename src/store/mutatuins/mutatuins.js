@@ -84,9 +84,66 @@ const mutations = {
     // _____________________________________________________________________++++
     MUTATUINS_ON_CLICK_BTN_DELETE_ITEM(state, indexItemCard) {
         state.arrayItemsWords.splice(indexItemCard, 1);
+    },
+    // _____________________________________________________________________++++
+    MUTATUINS_SORT_FOR_ENG_WORDS_A_Z(state) {
+        let flagForSortReverse = false;
+
+        state.arrayItemsWords.sort(function (a, b) {
+            if (a.word.toLowerCase() > b.word.toLowerCase()) {
+                flagForSortReverse = true;
+                return 1;
+            }
+            if (a.word.toLowerCase() < b.word.toLowerCase()) {
+                flagForSortReverse = false;
+                return -1;
+            }
+
+            return 0;
+
+        })
+
+        if (flagForSortReverse) {
+            state.arrayItemsWords.reverse();
+        }
+
+    },
+    // _____________________________________________________________________++++
+    MUTATUINS_SORT_FOR_RUSS_WORDS_A_Z(state) {
+        let flagForSortReverse = false;
+
+        state.arrayItemsWords.sort(function (a, b) {
+            if (a.translate.toLowerCase() > b.translate.toLowerCase()) {
+                flagForSortReverse = true;
+                return 1;
+            }
+            if (a.translate.toLowerCase() < b.translate.toLowerCase()) {
+                flagForSortReverse = false;
+                return -1;
+            }
+
+            return 0;
+
+        })
+
+        if (flagForSortReverse) {
+            state.arrayItemsWords.reverse();
+        }
+    },
+    // _____________________________________________________________________++++
+
+    MUTATUINS_CLEAN_ALL_CHECKBOX(state) {
+
+        const arrayAllInputCheckbox = document.querySelectorAll(".input-checkbox-hide-item");
+
+        arrayAllInputCheckbox.forEach((item) => {
+            item.checked = false
+        });
+
+        state.arrayItemsWords.forEach(item => {
+            item.done = false
+        })
     }
-
-
 }
 
 export default mutations

@@ -34,8 +34,21 @@ const getters = {
     ACTION_FLAG_CHECKBOX({ commit }, id) {
         commit('MUTATUINS_FLAG_CHECKBOX', id)
     },
+    // _____________________________________________________________________+++
+    ACTION_SORT_FOR_ENG_WORDS_A_Z({ commit }) {
+        commit('MUTATUINS_SORT_FOR_ENG_WORDS_A_Z')
+    },
+    // _____________________________________________________________________+++
 
+    ACTION_SORT_FOR_RUSS_WORDS_A_Z({ commit }) {
+        commit('MUTATUINS_SORT_FOR_RUSS_WORDS_A_Z')
+    },
 
+    // _____________________________________________________________________+++
+
+    ACTION_CLEAN_ALL_CHECKBOX({ commit }) {
+        commit('MUTATUINS_CLEAN_ALL_CHECKBOX')
+    }
 }
 
 export default getters

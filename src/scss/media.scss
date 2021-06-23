@@ -7,6 +7,9 @@
     margin: 0 auto;
     background: aliceblue;
     }
+    // .header__btns {
+    //     justify-content: center;
+    // }
 }
 
 @media (max-width: 600px) {
@@ -33,7 +36,7 @@
         display: none;
     }
     .btn-delete-item-mobile {
-        display: block;
+        display: flex;
     }
 
 
@@ -45,5 +48,9 @@
     .input-checkbox-hide-item {
         width: 57px;
         height: 57px;
+    }
+
+    .discription-item__ru-word {
+        text-align: center;
     }
   }

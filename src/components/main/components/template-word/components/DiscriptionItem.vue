@@ -34,5 +34,11 @@ export default {
   color: #2c3e50;
   font-weight: bold;
   font-size: 18px;
+  text-align: left;
+  white-space: nowrap;
+}
+.discription-item__ru-word {
+  margin: 10px;
+  text-align: left;
 }
 </style>

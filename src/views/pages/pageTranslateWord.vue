@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>page 2 search-word in internet</h2>
-    <router-link to="/" class="header__link">Home</router-link>
+    <router-link to="/" class="header__link222222222">Home</router-link>
 
     <div class="calendar-container">
       <iframe
