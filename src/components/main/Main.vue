@@ -1,13 +1,16 @@
 <template>
   <main class="main">
+    <!-- Поиск -->
     <Search />
-
+    <!-- сообщение что такого слова не нашло -->
     <div v-if="GETTERS_SEARCH_INPUT">Такого слова к сожалению нету...</div>
+    <!-- шаблон карточки товара -->
     <ItemWord
       class="main_item"
       :arrayWords="GETTERS_GET_ARRAY_WORDS"
       v-if="arrayItemsWords.length > 0"
     />
+    <!-- если все слова удалили,выпадает сообщение -->
     <div v-else>Слова закончились</div>
   </main>
 </template>
