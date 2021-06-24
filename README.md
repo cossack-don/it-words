@@ -16,4 +16,4 @@ npm run build
 ```
 
 ### Ссылка на проект
-https://cli.vuejs.org/config/
+https://cossack-don.github.io/it-words/#/
