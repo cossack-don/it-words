@@ -43,7 +43,7 @@ export default {
       required: true,
     },
   },
-  // computed: { ...mapState(["arrayItemsWords"]) },
+
   methods: {
     ...mapActions(["ACTION_ON_CLICK_BTN_DELETE_ITEM"]),
 

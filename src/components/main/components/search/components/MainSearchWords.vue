@@ -1,13 +1,16 @@
 <template>
   <div class="main-search-wrapper">
+    <!-- ПОИСК ПОЛЕ ИНПУТ -->
     <input
       class="main-search-input"
       type="text"
       :value="words"
       @input="updateWords"
       @keyup.esc="cleanKeyUpEsc"
-      placeholder="Автопоиск по ru слову"
+      placeholder="Автопоиск по russian слову"
     />
+
+    <!-- ОЧИСТИТЬ ПОИСК -->
     <button class="main-search-button-delete" @click="cleanValueSearch">
       <div class="main-search-wrapper-icon-delete">
         <svg
@@ -68,50 +71,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.main-search-wrapper {
-  transition: 0.5s;
-  display: flex;
-  padding: 10px;
-  background: #2c3e50;
-  border-radius: 5px;
-}
-
-.main-search-wrapper svg {
-  transition: 0.5s;
-  width: 30px;
-  height: 30px;
-  fill: #ffffff;
-}
-
-.main-search-wrapper:hover {
-  svg {
-    transition: 0.5s;
-    fill: #ffffff;
-  }
-}
-.main-search-button-delete {
-  cursor: pointer;
-  background: #dc3545;
-  color: #ffffff;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  /* margin: 15px; */
-  margin-left: 30px;
-
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-.main-search-button-delete:hover {
-  background: red;
-}
-.main-search-button-delete:active {
-  background: rgb(197, 197, 197);
-}
-</style>

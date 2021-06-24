@@ -11,6 +11,9 @@ const mutations = {
         // очищаем поле инпута
         state.searchString = ''
 
+        // удаляем сообщение о том что слова нету
+        state.flagMessageNoWord = false
+
         // если поле пустое, возвращаем массив значений слов
         if (state.searchString === '') {
             state.arrayItemsWords.forEach(i => {
@@ -49,11 +52,18 @@ const mutations = {
         // получаем данные из компонента и кладем в переменную стора серч стринг
         state.searchString = autoLayoutKeybord(valueSearch.toLowerCase())
 
+        // пустой массив,куда кладем boolean значение каждого слова, при поиске в инпуте
+        // если в поиске не находится слово, все слова возвращают false
+        const arrayOfNotFoundWords = [];
 
         if (state.searchString) {
             // если не удаляли слова из списка, показываем
+
             state.arrayItemsWords.forEach(item => {
-                // ТУТ ГДЕ-ТО СДЕЛАТЬ ПРОВЕРКУ НА ТО ЧТО ЕСЛИ СЛОВО НЕ НАШЛОСЬ, ВЫВОДИТЬ ОПОВЕЩЕНИЕ ТАКОГО СЛОВА НЕТУ, ДОРАБОТАТЬ!
+
+                arrayOfNotFoundWords.push(item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase()))
+
+
                 item.show = item.translate.toLowerCase().includes(state.searchString.trim().toLowerCase());
             })
 
@@ -63,6 +73,20 @@ const mutations = {
                 i.show = true
             });
         }
+
+
+        // если таких слов нету, вывожу сообщение , смотрю по boolean
+        // arrayOfNotFoundWords массив с true - false , если весь массив с false я захожу в if т.к. тру при every
+        if (arrayOfNotFoundWords.every(item => item === false)) {
+            // если пустая строка поиска я выхожу  и отключаю сообщение
+            if (state.searchString === '') {
+                state.flagMessageNoWord = false
+                return false
+            }
+            // если слова не находит, показываю сообщение
+            state.flagMessageNoWord = true
+        }
+
 
     },
     // _____________________________________________________________________+++

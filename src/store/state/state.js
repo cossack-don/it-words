@@ -6,6 +6,8 @@ const state = () => ({
   arrayItemsWords,
   searchString: '',
   testString: '',
+  flagMessageNoWord: false,
+
 })
 
 export default state

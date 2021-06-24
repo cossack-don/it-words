@@ -1,3 +1,5 @@
+// MEDIA 1050
+
 @media (max-width: 1050px) {
     #app {
     border:none;
@@ -7,13 +9,21 @@
     margin: 0 auto;
     background: aliceblue;
     }
-    // .header__btns {
-    //     justify-content: center;
-    // }
+    .page-one {
+        height: 100vh;
+    }
+    .footer {
+        color:aliceblue !important;
+    }
 }
-
+// MEDIA 600
 @media (max-width: 600px) {
- 
+.header__icons-mobile {
+    display: flex;
+}
+.header__btns {
+    display: none;
+}
     .discription-item {
         flex-direction: column;
         justify-content: center;
@@ -23,8 +33,6 @@
     .discription-item__line {
         display: none;
     }
-
-
 
     .btn-delete-item:hover {
         transition: 0.5s;
@@ -36,10 +44,10 @@
     .btn-delete-item-desktop{
         display: none;
     }
+
     .btn-delete-item-mobile {
         display: flex;
     }
-
 
     .items-word-wrapper__item:hover {
         background: #09cd74;

@@ -24,3 +24,12 @@
 .checkedWordBgJs {
     background: #ff9800 !important;
     }
+
+.item-word {
+display: flex;
+flex-direction: column;
+}
+.item-word__btns {
+display: flex;
+align-items: center;
+}

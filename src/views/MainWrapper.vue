@@ -2,7 +2,9 @@
   <div class="page-one">
     <Header />
     <Main />
-    <!-- <Footer /> -->
+    <Footer />
+
+    <!-- BTN ARRAY UP -->
     <div class="wrapper-array-up">
       <button
         v-show="showArray"
@@ -54,19 +56,20 @@
         </div>
       </button>
     </div>
+    <!-- END BTN ARRAY UP -->
   </div>
 </template>
 
 <script>
 import Header from "@/components/header/Header.vue";
 import Main from "@/components/main/Main.vue";
-// import Footer from "@/components/footer/Footer.vue";
+import Footer from "@/components/footer/Footer.vue";
 
 export default {
   components: {
     Header,
     Main,
-    // Footer,
+    Footer,
   },
 
   computed: {
@@ -91,35 +94,3 @@ export default {
   },
 };
 </script>
-<style>
-.page-one {
-  position: relative;
-}
-.wrapper-array-up {
-  position: fixed;
-  top: 110px;
-  display: none;
-}
-.btn-array-top-page {
-  background: #00ff00;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: none;
-  color: #ffffff;
-
-  transition: 0.5s;
-}
-.btn-array-top-page:hover {
-  cursor: pointer;
-  transition: 0.5s;
-  background: #e4d504;
-}
-.icon-svg-array-up {
-}
-.icon-svg-array-up svg {
-  width: 40px;
-  height: 40px;
-  fill: #ffffff;
-}
-</style>

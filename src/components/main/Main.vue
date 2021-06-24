@@ -1,6 +1,8 @@
 <template>
   <main class="main">
     <Search />
+
+    <div v-if="GETTERS_SEARCH_INPUT">Такого слова к сожалению нету...</div>
     <ItemWord
       class="main_item"
       :arrayWords="GETTERS_GET_ARRAY_WORDS"
@@ -25,32 +27,17 @@ export default {
     ItemWord,
   },
   data() {
-    return {
-      // flagArrayScrollTopPage: true,
-    };
+    return {};
   },
-  watch: {
-    // showArray(e) {
-    //   console.log(window.scrollTo(pageX, pageY));
-    //   if (window.scrollY > 550) {
-    //     console.log(window.scrollY);
-    //   }
-    // },
-  },
+
   computed: {
-    ...mapGetters(["GETTERS_GET_ARRAY_WORDS"]),
+    ...mapGetters(["GETTERS_GET_ARRAY_WORDS", "GETTERS_SEARCH_INPUT"]),
     ...mapState({
       arrayItemsWords: (state) => state.arrayItemsWords,
     }),
-
-    // ss(e) {
-    //   console.log(e);
-    //   if (window.scrollY > 250) {
-    //     console.log(window.scrollY);
-    //   }
-    // },
   },
   methods: {
+    // ...mapMutation(["MUTATUINS_SHOW_MESSAGE_NOT_WORD"]),
     ...mapActions(["ACTION_ARRAY_WORDS"]),
   },
 
@@ -60,5 +47,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

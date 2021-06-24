@@ -1,26 +1,32 @@
 <template>
   <div class="items-word-wrapper">
+    <!--  цикл отрисовки карточек-->
     <div
       v-for="item in arrayWords"
       :key="item.id"
       class="items-word-wrapper__item-wrapper"
     >
+      <!--  -->
       <div
         v-if="item.show"
         class="items-word-wrapper__item"
         :class="{ checkedWordBgJs: item.done }"
       >
+        <!-- описание карточки -->
         <DiscriptionItem :item="item" />
+
         <div class="item-word__btns">
-          <!-- {{ item.done }} -->
+          <!-- кнопка чекбокс -->
           <BtnCheckboxHideItem
             :idObjectWords="item.id"
             :doneObjectWords="item.done"
             :checked="item.done"
           />
+          <!-- кнопка удалить карточку -->
           <BtnDeleteItem :idObjectWords="item.id" />
         </div>
       </div>
+      <!--  -->
     </div>
   </div>
 </template>
@@ -34,30 +40,13 @@ export default {
     arrayWords: {
       type: Array,
     },
-    // indexItemArray: {
-    //   type: Array,
-    // },
   },
 
   methods: {},
 
-  // BtnCheckboxHideItem
   components: { BtnDeleteItem, DiscriptionItem, BtnCheckboxHideItem },
 };
 </script>
 
 <style>
-.item-word {
-  display: flex;
-  /* justify-content: space-between; */
-  flex-direction: column;
-
-  /* margin: 15px;
-
-  padding: 15px 25px; */
-}
-.item-word__btns {
-  display: flex;
-  align-items: center;
-}
 </style>

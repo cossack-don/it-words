@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <h2>page 2 search-word in internet</h2>
-    <router-link to="/" class="header__link">Home</router-link>
+  <div class="page-two">
+    <h2 class="title">Перевод слов</h2>
 
     <div class="calendar-container">
       <iframe
@@ -10,14 +9,16 @@
         src="https://www.lingvolive.com/ru-ru"
       ></iframe>
     </div>
+
+    <!-- link home -->
+    <router-link to="/" class="header__link link-home">Home</router-link>
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style>
+.page-two {
+  height: 100vh;
+}
 .calendar-container {
   position: relative;
   padding-bottom: 75%;
@@ -40,5 +41,13 @@ export default {};
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.link-home {
+  margin: 15px auto;
+}
+
+.title {
+  margin-bottom: 15px;
 }
 </style>
