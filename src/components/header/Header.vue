@@ -1,15 +1,17 @@
 <template>
   <header class="header">
-    
-      <h1 class="header__title">
-        Словарь английских-технических слов. <br />
-        Учи английский сам.
-      </h1>
-      <router-link to="/page-translate-word" class="header__link"
-        >Page 2</router-link
-      >
-    </div> <div class="header__wrapper">
+    <h1 class="header__title">
+      Словарь английских-технических слов. <br />
+      Учи английский сам.
+    </h1>
+
+    <div class="header__wrapper">
       <div class="header__btns">
+        <div>
+          <router-link to="/page-translate-word" class="header__btn-randow-word"
+            >Page 2</router-link
+          >
+        </div>
         <div>
           <button class="header__btn-randow-word" @click="sortEnglishWords">
             Cортировка ENG words &#9660; &#9650;
@@ -41,6 +43,12 @@
 import { mapActions } from "vuex";
 
 export default {
+  data() {
+    return {
+      notMobiveWidth: true,
+    };
+  },
+  computed: {},
   methods: {
     ...mapActions([
       "ACTION_RANDOM_WORDS",

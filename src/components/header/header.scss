@@ -1,5 +1,5 @@
 .header {
-position: relative;
+// position: relative;
 
 &__title {
     font-size: 25px;
@@ -12,9 +12,7 @@ position: relative;
     }
 
     &__link  {
-    position: absolute;
-    top: -8px;
-    right: 0;
+
 
 
     background: #ff9800;

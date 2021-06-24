@@ -6,7 +6,7 @@
       :value="words"
       @input="updateWords"
       @keyup.esc="cleanKeyUpEsc"
-      placeholder="Автопоиск по слову"
+      placeholder="Автопоиск по ru слову"
     />
     <button class="main-search-button-delete" @click="cleanValueSearch">
       <div class="main-search-wrapper-icon-delete">

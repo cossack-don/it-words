@@ -7,15 +7,6 @@
       v-if="arrayItemsWords.length > 0"
     />
     <div v-else>Слова закончились</div>
-
-    <!-- ДОДЕЛАТЬ КНОПКУ ВВЕРХ, СДЕЛАТЬ ПРИ УСЛОВИЕ ПРОКРУТКИ 300 ПК ПОКАЗЫВАТЬ КНОПКУ ИНАЧЕ СКРЫВАТЬ -->
-    <button
-      v-if="flagArrayScrollTopPage"
-      class="btn-array-top-page"
-      @click="btnScrollTopPage"
-    >
-      &#5123; вверх
-    </button>
   </main>
 </template>
 
@@ -35,21 +26,31 @@ export default {
   },
   data() {
     return {
-      flagArrayScrollTopPage: true,
+      // flagArrayScrollTopPage: true,
     };
   },
-
+  watch: {
+    // showArray(e) {
+    //   console.log(window.scrollTo(pageX, pageY));
+    //   if (window.scrollY > 550) {
+    //     console.log(window.scrollY);
+    //   }
+    // },
+  },
   computed: {
     ...mapGetters(["GETTERS_GET_ARRAY_WORDS"]),
     ...mapState({
       arrayItemsWords: (state) => state.arrayItemsWords,
     }),
+
+    // ss(e) {
+    //   console.log(e);
+    //   if (window.scrollY > 250) {
+    //     console.log(window.scrollY);
+    //   }
+    // },
   },
   methods: {
-    btnScrollTopPage() {
-      window.scrollTo(0, 0);
-    },
-
     ...mapActions(["ACTION_ARRAY_WORDS"]),
   },
 
@@ -60,12 +61,4 @@ export default {
 </script>
 
 <style>
-.main {
-  position: relative;
-}
-.btn-array-top-page {
-  position: fixed;
-  top: 90px;
-  left: 20px;
-}
 </style>
